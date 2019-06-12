@@ -1,0 +1,26 @@
+ * Serving Flask app "flask_ipv6test" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "flask_ipv6test.py", line 29, in <module>
+    app.run(host='::', port=8888, debug=True)
+  File "/home/ubuntu/.local/lib/python3.5/site-packages/flask/app.py", line 943, in run
+    run_simple(host, port, self, **options)
+  File "/home/ubuntu/.local/lib/python3.5/site-packages/werkzeug/serving.py", line 968, in run_simple
+    s.bind(server_address)
+OSError: [Errno 98] Address already in use
+ * Serving Flask app "flask_ipv6test" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "flask_ipv6test.py", line 29, in <module>
+    app.run(host='::', port=8888, debug=True)
+  File "/home/ubuntu/.local/lib/python3.5/site-packages/flask/app.py", line 943, in run
+    run_simple(host, port, self, **options)
+  File "/home/ubuntu/.local/lib/python3.5/site-packages/werkzeug/serving.py", line 968, in run_simple
+    s.bind(server_address)
+OSError: [Errno 98] Address already in use

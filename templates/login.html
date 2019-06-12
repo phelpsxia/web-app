@@ -1,0 +1,61 @@
+<html>
+<head>
+    <script>
+        var url = 'http://[2001:da8:270:2018:f816:3eff:fe98:4550]:8888' 
+        function login()
+        {
+            /*window.location.href='index1.html'*/
+        var username = $("input[name='username']").val();
+        var password = $("input[name='password']").val();
+        data = {'username':username, 'password':password};
+        $.ajax({
+            type: 'POST',
+            url: url+'/login',
+            data: data,
+            success: function(data){
+                console.log(data)
+                if(data == 'success'){window.location.href='index'}
+                else{alert('user info error')}
+            },
+           error: function(error) {
+             console.log("error:"+ error); 
+            }
+        });
+      }
+    </script>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="../statics/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<div class="container">
+  <div class="row">
+    <div class="Absolute-Center is-Responsive">
+      <div id="logo-container"></div>
+      <div class="col-sm-12 col-md-10 col-md-offset-1 col-12">
+        <form action="" id="loginForm">
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" type="text" name='username' placeholder="username"/>          
+          </div>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" type="password" name='password' placeholder="password"/>     
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> I agree to the <a href="#">Terms and Conditions</a>
+            </label>
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-def btn-block" onclick="login()">Login</button>
+          </div>
+          <div class="form-group text-center">
+            <a href="#">Forgot Password</a>&nbsp;|&nbsp;<a href="#">Support</a>
+          </div>
+        </form>        
+      </div>  
+    </div>    
+  </div>
+</div>
+</body>
