@@ -215,7 +215,7 @@ def fetch():
 
 #upload data from device
 @app.route('/streaming',methods=["POST"])
-def stream():
+def streaming():
     db = pymysql.connect("localhost","root","gix_iot","Userinfo")
     sql = ''
     cursor = db.cursor()
