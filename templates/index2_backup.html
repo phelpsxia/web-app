@@ -1,0 +1,80 @@
+<html>
+<head>
+</head>
+<body>
+<br/>
+<!-- INCLUDE overall_header.html -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../statics/styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=uhbsHeYioh5w20rMtedXBqe6xy6rtI8V"></script>
+<script src="../statics/streaming_backup.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="sidebar-nav">
+            <div class="navbar navbar-default" role="navigation">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <span class="visible-xs navbar-brand">菜单</span>
+              </div>
+              <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                <ul class="nav navbar-nav">
+                  <li><a href="index">历史记录</a></li>
+                  <li class="active"><a href="stream">实时信息</a></li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-9">
+           <br><br>
+            <h2 id="title">实时信息</h2>
+            <br><br>
+            <hr id="sep">
+            <div class="panel" id="panel">
+               <div class="inner">
+                  <span class="corners-top"><span></span></span>
+                        <div>
+                           <div id="map"></div>
+                        </div>
+                        <br>
+                        <div id="viewerPanel">
+                           <table class="table table-borderless" id="route_details">
+                                 <td><h6 id="dateLabel">time</h6>
+                                    <h6 id="date">00:00:00</h6></td>
+                                 <td><h6 id="speedLabel">speed</h6>
+                                    <h6 id="speed">0 mph</h6></td>
+                                 <td><h6 id="distanceLabel">distance</h6>
+                                    <h6 id="distance">0.0/0.0mi</h6></td>
+                           </table>
+                           <div>
+                              <img id ="video_pic" src="../statics/comma_default.png">
+                           </div>
+                        </div>
+                        
+                  <script async defer
+                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu2lXe6b5E55W6iKajZbZ0jB5Im0Byk3M&callback=initMap"></script>
+               </div>
+               <span class="corners-bottom"><span></span></span>
+            </div>
+            </div>
+            <script>
+            g_dongle_id = "{DONGLE_ID}";
+            </script>
+        </div>
+      </div>
+   
+
+<!-- INCLUDE overall_footer.html
+
