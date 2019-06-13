@@ -245,7 +245,7 @@ def fetch():
                 'dist': r[2],
                 'lat': r[1],
                 'lng': r[3],
-                'speed': r[4]
+                'speed': r[4],
                 'index': int(r[0].split('_')[-1])
             }
 
