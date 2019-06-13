@@ -224,7 +224,7 @@ def fetch():
             }
         #print(res)
         result = json.dumps(res)
-        return result
+        return result,200,{"ContentType":"application/json"}
         #except:
             #return "Error: unable to fecth routeId data"  
     
