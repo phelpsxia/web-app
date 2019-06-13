@@ -79,8 +79,8 @@ function update(coords, routeName, clickedIndex) {
   function get_picture() {
     p("called");
     timeout = null;
-    p(routeInfo[routeName]['fullname'])
-    frames_url = "statics/img/"+routeInfo[routeName]['fullname'];
+    p(routeInfo[routeName]['fullname']replace('|','_'))
+    frames_url = "statics/img/"+routeInfo[routeName]['fullname'].replace('|','_');
     video_URL = frames_url+'-'+marker['lat'].toFixed(4)+'-'+marker['lng'].toFixed(4)+".jpg";
 
     video_pic.src = video_URL
