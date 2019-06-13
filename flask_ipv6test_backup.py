@@ -232,13 +232,25 @@ def fetch():
         routeId = request.form['routeId']
         sql = "SELECT * FROM routesdetail WHERE routeid_index CONTAINS '%s'" %routeId
 
-        try:
-            cursor.execute(sql)
-            data = cursor.fetchall()
-            return data
-        except:
-            return "Error: unable to fecth route details"  
+        #try:
+        cursor.execute(sql)
+        data = cursor.fetchall()
+        print(data)
+        res = []
+        for r in data:
+            print(int(r[0].split('_')[-1]))
+            res[int(r[0].split('_')[-1])] = {
+                'dist': r[2],
+                'lat': r[1],
+                'lng': r[3],
+                'speed': r[4]
+            }
 
+        #return data
+        #except:
+            #return "Error: unable to fecth route details"  
+        result = json.dumps(res)
+        return result,200,{"Content-Type":"application/json"}
     db.close()
 
 #upload data from device
