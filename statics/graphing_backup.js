@@ -235,9 +235,9 @@ function drawLine(map) {
     type: 'GET',
     url: BACKEND+'/fetch',
     success: function(json) {
-      p(json);
+      
       routeInfo = json['routes'];
-
+      p(routeInfo);
       var routes = Object.keys(routeInfo);
       routes.sort();
       routes.reverse();
