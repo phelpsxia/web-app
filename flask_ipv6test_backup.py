@@ -188,7 +188,7 @@ def stream():
 #acquire data from database
 @app.route('/fetch',methods=["POST",'GET'])
 def fetch():
-    db = pymysql.connect("localhost","root","gix_iot","Userinfo")
+    db = pymysql.connect("localhost","root","gix_iot","UserInfo")
     cursor = db.cursor()
     #TODO sql command
     if request.method == 'GET':

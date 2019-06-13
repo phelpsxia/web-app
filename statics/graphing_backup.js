@@ -246,14 +246,11 @@ function drawLine(map) {
       var routeList = "<table class='table'>";
       $.each(routes, function(key, val) {
         routeList += "<tr class='routeline' id='r"+btoa(val)+"'><td><a href='#"+val+"')' class='route' style='visibility: hidden; color:#ccc'>"+val+"</a></td></tr>";
-        var allRoutes = routeInfo[val]['url'] + "/route.coords";
+        p(val)
         $.ajax({
-          type: 'GET',
-          crossDomain: true,
-          url: allRoutes,
-          callback: 'jsonCallback',
-          contentType: "application/json",
-          dataType: 'json',
+          type: 'POST',
+          url: BACKEND+'/fetch',
+          data: {routeId: val},
           success: function(json) { handleRoute(json, val, i); },
          });
         i += 1;
