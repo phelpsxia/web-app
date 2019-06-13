@@ -208,7 +208,7 @@ def fetch():
                 "end_lng": r[5],
                 "end_time":r[7],
                 "fullname": r[9],
-                "hpgps": false,
+                "hpgps": False,
                 "len": r[9],
                 "maxcamera": -1,
                 "maxlog": -1,
