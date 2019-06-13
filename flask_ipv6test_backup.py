@@ -236,7 +236,7 @@ def fetch():
         #try:
         cursor.execute(sql)
         data = cursor.fetchall()
-        print(data)
+        #print(data)
         res = []
         for r in data:
             print(int(r[0].split('_')[-1]))
