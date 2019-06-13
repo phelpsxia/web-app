@@ -2,7 +2,7 @@ function p(x) {
   console.log(x);
 }
 
-BACKEND = "http://[2001:da8:270:2018:f816:3eff:fe98:4550]:8888/"
+BACKEND = "http://[2001:da8:270:2018:f816:3eff:fe98:4550]:8888"
 
 function parseRouteDate(routeName) {
   return Date.parse(routeName.substring(0, 10)+" "+routeName.substring(12).replace("-", ":").replace("-", ":"));
