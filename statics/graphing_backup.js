@@ -235,7 +235,7 @@ function drawLine(map) {
     type: 'GET',
     url: BACKEND+'/fetch',
     success: function(json) {
-      p(data);
+      p(json);
       routeInfo = json['routes'];
 
       var routes = Object.keys(routeInfo);
