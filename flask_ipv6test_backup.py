@@ -196,8 +196,11 @@ def fetch():
         try:
             cursor.execute(sql)
             data = cursor.fetchall()
-            print(data)
-            return data
+            res = []
+            for r in data:
+                res.append(r[-2])
+            print(r)
+            return r
         except:
             return "Error: unable to fecth routeId data"  
     
