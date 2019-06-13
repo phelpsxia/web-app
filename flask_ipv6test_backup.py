@@ -199,7 +199,7 @@ def fetch():
         res = {}
         res['routes'] = {}
         for r in data:
-            print(r[-2].split('|')[-1])
+            #print(r[-2].split('|')[-1])
             res['routes'][r[-2].split('|')[-1]] = {
                 "can": r[0],
                 "device_type": 3,
@@ -222,8 +222,9 @@ def fetch():
                 "start_time": r[8],
                 "url": "https://chffrprivate.blob.core.windows.net/chffrprivate3/v2/c325c20903434c0c/e4f3aaec6f339a396887ffc0cd224f66_2018-05-02--20-47-36"
             }
-        print(res)
-        return res
+        #print(res)
+        result = json.dumps(res)
+        return result
         #except:
             #return "Error: unable to fecth routeId data"  
     
