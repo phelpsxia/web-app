@@ -2,7 +2,7 @@
 from flask import Flask, request,render_template
 from flask_cors import CORS
 import pymysql
-
+import json
 app = Flask(__name__,static_folder='statics')
 CORS(app)
 
@@ -196,9 +196,32 @@ def fetch():
         try:
             cursor.execute(sql)
             data = cursor.fetchall()
-            res = []
+            res = {}
+            res[routes] = {}
             for r in data:
-                res.append(r[-2])
+                print(r[-2].split('|')[-1])
+                res[routes][r[-2].split('|')[-1]] = {
+                    "can": r[0],
+                    "device_type": 3,
+                    "end_geocode": r[1],
+                    "end_lat": r[3],
+                    "end_lng": r[5],
+                    "end_time":r[7],
+                    "fullname": r[9],
+                    "hpgps": false,
+                    "len": r[9],
+                    "maxcamera": -1,
+                    "maxlog": -1,
+                    "movie": False,
+                    "piececount": -1,
+                    "proccamera": 6,
+                    "proclog": 6,
+                    "start_geocode": r[2],
+                    "start_lat": r[4],
+                    "start_lng": r[6],
+                    "start_time": r[8],
+                    "url": "https://chffrprivate.blob.core.windows.net/chffrprivate3/v2/c325c20903434c0c/e4f3aaec6f339a396887ffc0cd224f66_2018-05-02--20-47-36"
+                }
             print(res)
             return res
         except:
