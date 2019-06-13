@@ -182,6 +182,7 @@ function drawLine(map) {
   // flightPath line and styles, 1st time & on click
   function handleRoute(json, routeName, routeNumber) {
     var coords = json;
+    p(coords)
     coordsAll[routeName] = coords;
     routeNumbersAll[routeName] = routeNumber;
     var tr = $(document.getElementById('r'+btoa(routeName)));
