@@ -177,7 +177,6 @@ function selectRoute(routeName) {
 
 // Init first route for polyline on GMap
 function drawLine(map) {
-  p(token);
 
   // Handle route coordinate and index data, set the 
   // flightPath line and styles, 1st time & on click
