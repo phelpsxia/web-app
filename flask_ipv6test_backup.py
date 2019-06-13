@@ -196,6 +196,7 @@ def fetch():
         try:
             cursor.execute(sql)
             data = cursor.fetchall()
+            print(data)
             return data
         except:
             return "Error: unable to fecth routeId data"  
@@ -216,7 +217,7 @@ def fetch():
 #upload data from device
 @app.route('/streaming',methods=["POST"])
 def streaming():
-    db = pymysql.connect("localhost","root","gix_iot","Userinfo")
+    db = pymysql.connect("localhost","root","gix_iot","UserInfo")
     sql = ''
     cursor = db.cursor()
     #TODO sql command
