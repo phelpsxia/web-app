@@ -230,17 +230,17 @@ def fetch():
     
     if request.method == 'POST':
         routeId = request.form['routeId']
-        print('routID:', routeId)
+        #print('routID:', routeId)
         sql = "SELECT * FROM routesdetail WHERE instr(routeid_index, '%s')" %routeId
 
         #try:
         cursor.execute(sql)
         data = cursor.fetchall()
-        print(data)
-        print('----------')
+        #print(data)
+        #print('----------')
         res = {}
         for r in data:
-            print(int(r[0].split('_')[-1]))
+            #print(int(r[0].split('_')[-1]))
             res[int(r[0].split('_')[-1])//100] = {
                 'dist': r[2],
                 'lat': r[1],
@@ -248,11 +248,13 @@ def fetch():
                 'speed': r[4],
                 'index': int(r[0].split('_')[-1])
             }
-
+        result = []
+        for key in res.keys().sort():
+            result.append(res[key])
         #return data
         #except:
             #return "Error: unable to fecth route details"  
-        result = json.dumps(res)
+        result = json.dumps(result)
         return result,200,{"Content-Type":"application/json"}
     db.close()
 
