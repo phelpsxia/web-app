@@ -197,10 +197,10 @@ def fetch():
         cursor.execute(sql)
         data = cursor.fetchall()
         res = {}
-        res[routes] = {}
+        res['routes'] = {}
         for r in data:
             print(r[-2].split('|')[-1])
-            res[routes][r[-2].split('|')[-1]] = {
+            res['routes'][r[-2].split('|')[-1]] = {
                 "can": r[0],
                 "device_type": 3,
                 "end_geocode": r[1],
