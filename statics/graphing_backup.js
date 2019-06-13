@@ -80,12 +80,12 @@ function update(coords, routeName, clickedIndex) {
     p("called");
     timeout = null;
 
-    frames_url = routeInfo[routeName]['url'];
-    video_URL = frames_url+"/sec"+Math.floor(marker['index'] / 100 + 1)+".jpg"
+    frames_url = "statics/img/"+routeInfo[routeName]['fullname'];
+    video_URL = frames_url+'-'+marker['lat'].toFixed(4)+'-'+marker['lng'].toFixed(4)+".jpg"
 
     video_pic.src = video_URL
     video_pic.onerror = function() {
-      video_pic.src = "comma_default.png";
+      video_pic.src = "statics/comma_default.png";
     };
   }
   if (timeout !== null) {
@@ -183,7 +183,6 @@ function drawLine(map) {
   function handleRoute(json, routeName, routeNumber) {
     var coords = json;
     p(coords)
-    p(coords.length)
     coordsAll[routeName] = coords;
     routeNumbersAll[routeName] = routeNumber;
     var tr = $(document.getElementById('r'+btoa(routeName)));
