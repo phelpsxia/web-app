@@ -81,7 +81,7 @@ function update(coords, routeName, clickedIndex) {
     timeout = null;
     p(routeInfo[routeName]['fullname'].replace('|','_'))
     frames_url = "statics/img/"+routeInfo[routeName]['fullname'].replace('|','_');
-    video_URL = frames_url+'-'+marker['index']/100+".jpg";
+    video_URL = frames_url+'_'+marker['index']/100+".jpg";
 
     video_pic.src = video_URL
     video_pic.onerror = function() {
