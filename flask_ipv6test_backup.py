@@ -249,7 +249,7 @@ def fetch():
                 'index': int(r[0].split('_')[-1])
             }
         result = []
-        for key in res.keys().sort():
+        for key in sorted(res.keys()):
             result.append(res[key])
         #return data
         #except:
