@@ -183,6 +183,7 @@ function drawLine(map) {
   function handleRoute(json, routeName, routeNumber) {
     var coords = json;
     p(coords)
+    p(coords.length)
     coordsAll[routeName] = coords;
     routeNumbersAll[routeName] = routeNumber;
     var tr = $(document.getElementById('r'+btoa(routeName)));
