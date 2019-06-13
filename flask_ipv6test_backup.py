@@ -199,8 +199,8 @@ def fetch():
             res = []
             for r in data:
                 res.append(r[-2])
-            print(r)
-            return r
+            print(res)
+            return res
         except:
             return "Error: unable to fecth routeId data"  
     
