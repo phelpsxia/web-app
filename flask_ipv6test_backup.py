@@ -240,12 +240,12 @@ def fetch():
         print('----------')
         res = []
         for r in data:
-            print(int(r[0].split('_')[-1]))
+            print(r,len(r))
             res[int(r[0].split('_')[-1])] = {
                 'dist': r[2],
                 'lat': r[1],
                 'lng': r[3],
-                'speed': r[4]
+                #'speed': r[4]
             }
 
         #return data
