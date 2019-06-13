@@ -230,13 +230,14 @@ def fetch():
     
     if request.method == 'POST':
         routeId = request.form['routeId']
-        print(routeId)
+        print('routID:', routeId)
         sql = "SELECT * FROM routesdetail WHERE instr(routeid_index, '%s')" %routeId
 
         #try:
         cursor.execute(sql)
         data = cursor.fetchall()
-        #print(data)
+        print(data)
+        print('----------')
         res = []
         for r in data:
             print(int(r[0].split('_')[-1]))
