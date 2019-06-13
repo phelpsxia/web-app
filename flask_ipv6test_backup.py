@@ -230,7 +230,7 @@ def fetch():
     
     if request.method == 'POST':
         routeId = request.form['routeId']
-        sql = "SELECT * FROM routesdetail WHERE routeid_index CONTAINS '%s'" %routeId
+        sql = "SELECT * FROM routesdetail WHERE CONTAINS(routeid_index, '%s') " %routeId
 
         #try:
         cursor.execute(sql)
