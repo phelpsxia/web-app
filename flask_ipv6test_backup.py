@@ -266,6 +266,6 @@ def fetch():
 @app.route('/streaming',methods=["POST"])
 def streaming():
     image = Image.open(BytesIO(request.data))
-    image.save('/temp_img/temp.jpg','jpeg')
+    image.save('./temp_img/temp.jpg','jpeg')
     return 'success'
 app.run(host='::', port=8888, debug=True)
