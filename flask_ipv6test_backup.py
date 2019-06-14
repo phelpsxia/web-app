@@ -270,6 +270,6 @@ def streaming():
     #print(os.getcwd())
     for f in os.listdir(os.path.join(os.getcwd(), 'statics/temp_img/')):
         os.remove(os.path.join(os.getcwd(), 'statics/temp_img/')+f)
-    image.save(os.path.join(os.getcwd(), 'statics/temp_img/'+str(time.time())+'.jpg'),'jpeg')
+    image.save(os.path.join(os.getcwd(), 'statics/temp_img/temp.jpg'),'jpeg')
     return 'success'
 app.run(host='::', port=8888, debug=True)
