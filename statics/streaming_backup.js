@@ -1,9 +1,11 @@
 function initMap() {
-var map = new BMap.Map("map");          // 创建地图实例
-var point = new BMap.Point(116.33696,40.002722);  // 创建点坐标
-map.centerAndZoom(point, 11);
-map.addControl(new BMap.NavigationControl());
-map.addControl(new BMap.ScaleControl());  
+    var map = new BMap.Map("map");          // 创建地图实例
+    var point = new BMap.Point(116.33696,40.002722);  // 创建点坐标
+    map.centerAndZoom(point, 11);
+    var gmarker = new BMap.Marker(Point);
+    map.addOverlay(gmarker);
+    map.addControl(new BMap.NavigationControl());
+    map.addControl(new BMap.ScaleControl());  
 }
 
 
