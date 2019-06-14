@@ -2,7 +2,7 @@ function initMap() {
     var map = new BMap.Map("map");          // 创建地图实例
     var point = new BMap.Point(116.33696,40.002722);  // 创建点坐标
     map.centerAndZoom(point, 11);
-    var gmarker = new BMap.Marker(Point);
+    var gmarker = new BMap.Marker(point);
     map.addOverlay(gmarker);
     map.addControl(new BMap.NavigationControl());
     map.addControl(new BMap.ScaleControl());  
