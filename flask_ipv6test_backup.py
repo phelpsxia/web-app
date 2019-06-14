@@ -6,6 +6,7 @@ import json
 from PIL import Image
 from io import BytesIO
 import time
+import os 
 
 app = Flask(__name__,static_folder='statics')
 CORS(app)
@@ -266,6 +267,7 @@ def fetch():
 @app.route('/streaming',methods=["POST"])
 def streaming():
     image = Image.open(BytesIO(request.data))
-    image.save('./temp_img/temp.jpg','jpeg')
+    print(os.getcwd())
+    image.save(os.path.join(os.getcwd(), 'temp_img/temp.jpg'),'jpeg')
     return 'success'
 app.run(host='::', port=8888, debug=True)
