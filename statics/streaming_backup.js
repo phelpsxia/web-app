@@ -14,5 +14,5 @@ function myTimer() {
     var t = d.toLocaleTimeString();
     document.getElementById("date").innerHTML = t;
     video_pic.src = null
-    video_pic.src = '../statics/temp_img/temp.jpg'
+    video_pic.src = '../statics/temp_img/*.jpg'
 }
