@@ -13,5 +13,6 @@ function myTimer() {
     var d = new Date();
     var t = d.toLocaleTimeString();
     document.getElementById("date").innerHTML = t;
+    video_pic.src = null
     video_pic.src = '../statics/temp_img/temp.jpg'
 }
