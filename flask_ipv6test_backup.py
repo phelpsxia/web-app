@@ -268,7 +268,7 @@ def fetch():
 def streaming():
     image = Image.open(BytesIO(request.data))
     #print(os.getcwd())
-    os.remove(os.path.join(os.getcwd(), 'statics/temp_img/*.jpg'))
+    os.remove(os.path.join(os.getcwd(), 'statics/temp_img/'+*+'.jpg'))
     image.save(os.path.join(os.getcwd(), 'statics/temp_img/'+time.time()+'.jpg'),'jpeg')
     return 'success'
 app.run(host='::', port=8888, debug=True)
