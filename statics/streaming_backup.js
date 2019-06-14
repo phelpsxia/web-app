@@ -13,5 +13,5 @@ function myTimer() {
     var d = new Date();
     var t = d.toLocaleTimeString();
     document.getElementById("date").innerHTML = t;
-    video_pic.src = '192.168.1.136:8081'
+    video_pic.src = '../statics/temp_img192.168.1.136:8081'
 }

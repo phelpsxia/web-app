@@ -265,6 +265,7 @@ def fetch():
 #upload data from device
 @app.route('/streaming',methods=["POST"])
 def streaming():
-    image = Image.open(BytesIO(request.content))
-    image.save(static_folder+'/temp_img/'+time.time()+'.jpg','jpeg')
+    image = Image.open(BytesIO(request.data))
+    image.save(static_folder+'/temp_img/temp.jpg','jpeg')
+    return 'success'
 app.run(host='::', port=8888, debug=True)
