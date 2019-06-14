@@ -3,6 +3,10 @@ from flask import Flask, request,render_template
 from flask_cors import CORS
 import pymysql
 import json
+from PIL import Image
+from io import BytesIO
+import time
+
 app = Flask(__name__,static_folder='statics')
 CORS(app)
 
@@ -261,16 +265,6 @@ def fetch():
 #upload data from device
 @app.route('/streaming',methods=["POST"])
 def streaming():
-    db = pymysql.connect("localhost","root","gix_iot","UserInfo")
-    sql = ''
-    cursor = db.cursor()
-    #TODO sql command
-    
-    
-    data = cursor.fetchall()
-    #return data
-    
-    # 关闭数据库连接
-    db.close()
-
+    image = Image.open(BytesIO(request.content))
+    image.save(static_folder+'/temp_img/'+time.time()+'.jpg','jpeg')
 app.run(host='::', port=8888, debug=True)
